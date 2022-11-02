@@ -1,10 +1,11 @@
 import { useState } from "react";
-
 //stylesheets
 import '../stylesheets/Index.css';
 
-function Index(props) {
-    let options = ['hello', 'hello again', 'once more']
+import {getNamesArray,nodenames} from '../utils/graph'
+function Index (props) {
+    let options = getNamesArray(nodenames)
+
     let filterOption = (options, query) => {
         if (!query)
             return [];

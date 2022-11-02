@@ -15,7 +15,7 @@ function swapKeysAndValues(obj) {
     return ret;
 }
 
-function getNamesArray(obj){
+export function getNamesArray(obj){
     const swapped = Object.entries(obj).map(
       ([key, value]) => value
     );
@@ -78,14 +78,19 @@ g.forEachNode(function(node){
 
 
 export function displayPath(path){
+    const ans=[];
     const n=path.length;
     for(let i=n-1;i>0;i--){
         let fn=path[i];
         let tn=path[i-1];
         // console.log(fn.data[tn.id],tn)
-        console.log("go",getDirection(fn.data[tn.id])," from ",nodenames[fn.id]," to ",nodenames[tn.id])
+        if(tn.data[fn.id] === -3 || tn.data[fn.id] === 3)
+        ans.push("climb "+getDirection(fn.data[tn.id])+" from "+nodenames[fn.id]+" to "+nodenames[tn.id])
+        else
+        ans.push("go "+getDirection(fn.data[tn.id])+" from "+nodenames[fn.id]+" to "+nodenames[tn.id])
     }
-
+    console.log(ans);
+    return ans;
 }
 
 
@@ -117,6 +122,10 @@ const getDirection=(dir)=>{
         return 'north'
         case -2:
             return 'south'
+        case 3:
+            return "up"
+        case -3:
+            return 'down'
         default:
             return "none"
     }
