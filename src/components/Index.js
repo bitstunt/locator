@@ -1,8 +1,8 @@
 import { useState } from "react";
-
+import {getNamesArray,nodenames} from '../utils/graph'
 function Index (props) {
     const [visibility,setVisibility] = useState(true)
-    let options = ['hello', 'hello again', 'once more']
+    let options = getNamesArray(nodenames)
     let filterOption = (options, query) => {
         if(!query)
         return [];

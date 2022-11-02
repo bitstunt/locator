@@ -1,8 +1,9 @@
 {
+    "10005":"account section intersection",
      "10001":"entrance"  ,
-     "10002":"store"  ,
-     "10003":"mech staff room"  ,
-     "10004":"assembly hall"  ,
+     "10002":"store intersection"  ,
+     "10003":"mech staff room intersection"  ,
+     "10004":"assembly hall intersection"  ,
      "1":"assembly hall"  ,
      "3":"dean of student welfare"  ,
      "4":"ore mining lab g1"  ,
@@ -12,5 +13,6 @@
      "8":"rock engineering lab"  ,
      "9":"mechanical staff room"  ,
      "10":"mechanical computer lab"  ,
-     "11":"fluid mechanics lab g10"  
+     "11":"fluid mechanics lab g10",
+     "12":"account section"
 }
