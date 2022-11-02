@@ -17,7 +17,7 @@ function App() {
 
     let foundPath = pathFinder.find(node1, node2);
     // console.log(foundPath)
-    displayPath(foundPath)
+    setPath(displayPath(foundPath))
   }
   useEffect(()=>{
     init();
@@ -27,7 +27,7 @@ function App() {
       <header> L<img className='logo' alt='logo' src={logo}/>CATOR </header>
       <SearchBox keywords={location} finalWords={setLocation} name="Current Location"/>
       <SearchBox keywords={destination} finalWords={setDestination} name="Destination"/>
-      <button onClick={handleSubmit}  >Find Route</button>
+      <button className="submitButton" onClick={handleSubmit}  >Find Route</button>
     </div>
   );
 }
