@@ -3,8 +3,13 @@ import SearchBox from './components/SearchBox';
 
 //stylesheets
 import './App.css';
+import { useEffect } from 'react';
+import init from './utils/graph';
 
 function App() {
+  useEffect(()=>{
+    init();
+  },[])
   return (
     <div className="App">
       <header> L<img className='logo' alt='logo' src={logo}/>CATOR </header>
