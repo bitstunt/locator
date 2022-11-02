@@ -11,7 +11,6 @@ function App() {
   const [destination,setDestination] = useState("")
   const [path,setPath] = useState([]);
   const handleSubmit = ()=>{
-    console.log(namenodes)
     let node1=parseInt(namenodes[location]);
     let node2=parseInt(namenodes[destination]);
 
@@ -19,6 +18,11 @@ function App() {
     // console.log(foundPath)
     setPath(displayPath(foundPath))
   }
+  let renderPath = path.map((e,i) =>{
+    return(
+      <div className="path" key={i}>{e}</div>
+    )
+  })
   useEffect(()=>{
     init();
   },[])
@@ -28,6 +32,9 @@ function App() {
       <SearchBox keywords={location} finalWords={setLocation} name="Current Location"/>
       <SearchBox keywords={destination} finalWords={setDestination} name="Destination"/>
       <button className="submitButton" onClick={handleSubmit}  >Find Route</button>
+      <div className="paths">
+        {renderPath}
+      </div>
     </div>
   );
 }
