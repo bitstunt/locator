@@ -3,7 +3,7 @@ let path = require('ngraph.path');
 
 var g = createGraph();
 
-const nodenames={
+export const nodenames={
     '10001':'entry',
     '0':'director room',
     '1':'conference hall',
@@ -57,7 +57,7 @@ function buildGraph(inGraph,graph){
 
     })
 }
-function displayGraph(graph){
+export function displayGraph(graph){
 
 g.forEachLink(function(link) {
     console.dir(link);
@@ -70,7 +70,7 @@ g.forEachNode(function(node){
 }
 
 
-function displayPath(path){
+export function displayPath(path){
     const n=path.length;
     for(let i=n-1;i>0;i--){
         let fn=path[i];
@@ -82,21 +82,20 @@ function displayPath(path){
 }
 
 
-
-
+let pathFinder;
 
 
 function init(){
 buildGraph(nodelinks,g);
 buildGraph(makeNodelinks(intersections),g);
-let pathFinder = path.aStar(g);
+pathFinder = path.aStar(g);
 let fromNodeId = 10001;
 let toNodeId = 1;
 let foundPath = pathFinder.find(fromNodeId, toNodeId);
 // console.log(foundPath)
-displayPath(foundPath)
 }
 export default init;
+export { pathFinder}
 
 
 

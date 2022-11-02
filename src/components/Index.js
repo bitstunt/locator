@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 function Index (props) {
+    const [visibility,setVisibility] = useState(true)
     let options = ['hello', 'hello again', 'once more']
     let filterOption = (options, query) => {
         if(!query)
@@ -11,7 +14,10 @@ function Index (props) {
     }
     let result = filterOption(options, props.query);
     let option = result.map((e,i) => {return (
-        <li key={i}>{e}</li>
+    <button onClick={() =>{
+        props.setQuery(e)
+    setVisibility(false)}
+    } key={i}>{e}</button>
     )})
     return(
         <div className="iContainer">
