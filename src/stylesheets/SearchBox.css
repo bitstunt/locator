@@ -1,0 +1,40 @@
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 2rem;
+    padding: 0.5rem 0;
+}
+
+
+input{
+    width: 15rem;
+    height: 2rem;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    padding-left: 3rem;
+    font-size: 1.2rem;
+}
+
+label{
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 17rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #5a8ea6;
+    pointer-events: none;
+}
+
+.fa-solid{
+    padding-right: 1rem;
+}
+
+input:focus ~ label > .label-name{
+    display: none;
+}
