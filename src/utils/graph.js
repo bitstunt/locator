@@ -3,21 +3,28 @@ let path = require('ngraph.path');
 
 var g = createGraph();
 
-export const nodenames={
-    '10001':'entry',
-    '0':'director room',
-    '1':'conference hall',
-    '10002':'',
+export const nodenames = require('./nodenames.json')
+const nodelinks = require('./nodelinks.json')
+const intersections=require('./intersections.json')
+
+function swapKeysAndValues(obj) {
+    let ret={};
+    for(var  key in obj){
+        ret[obj[key]]=key;
+    }
+    return ret;
 }
 
-const nodelinks = [
-    //2 is east of 1
-    [1,0,2]
-]
-const intersections=[
-    [0,1,10001,2],
-    [0,1,10002,-2]
-]
+function getNamesArray(obj){
+    const swapped = Object.entries(obj).map(
+      ([key, value]) => value
+    );
+  
+    return swapped;
+
+}
+export const namenodes=swapKeysAndValues(nodenames);
+
 const makeNodelinks=(ints)=>{
     let arr=[];
     ints.forEach(intersection=>{

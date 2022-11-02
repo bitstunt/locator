@@ -4,16 +4,17 @@ import SearchBox from './components/SearchBox';
 //stylesheets
 import './App.css';
 import { useEffect, useState } from 'react';
-import init,{pathFinder,nodenames,displayPath} from './utils/graph';
+import init,{pathFinder,nodenames,namenodes,displayPath} from './utils/graph';
 
 function App() {
   const [location,setLocation] = useState("");
   const [destination,setDestination] = useState("")
   const [path,setPath] = useState([]);
   const handleSubmit = ()=>{
-    let node1=nodenames[location];
-    let node2=nodenames[destination];
-    console.log(node1,node2,location,destination)
+    console.log(namenodes)
+    let node1=parseInt(namenodes[location]);
+    let node2=parseInt(namenodes[destination]);
+
     let foundPath = pathFinder.find(node1, node2);
     // console.log(foundPath)
     displayPath(foundPath)
