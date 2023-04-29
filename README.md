@@ -38,8 +38,6 @@ The following features are planned for future implementations:
 
  - Implementing Leaflet and React-Leaflet to display the map and the route between two points.
  - Adding support for multiple destinations and alternative routes.
- - Integrating with a real-time traffic API to provide up-to-date traffic information.
- - Providing voice-based navigation instructions.
 
 
 ## Contributing
